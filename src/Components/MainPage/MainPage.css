@@ -1,0 +1,80 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.upper-container {
+    padding: 0 3%;
+    flex-direction: column;
+}
+
+.butt-container {
+    display: flex;
+    margin-left: 3%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
+    background-color: rgba(1, 1, 1, 0.4);
+    padding: 2%;
+    margin: 0 20% 3% 20%;
+}
+
+.down-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-bottom: 5px;
+}
+
+p.user {
+    font-size: 1.4em;
+    font-family: sans-serif;
+    margin-right: 1.5%;
+}
+
+.NoNotes {
+    color: white;
+    font-size: 30px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.text-bucket {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+h2 {
+    overflow: hidden;
+    color: rgb(87, 87, 87);
+    font-size: 15px;
+}
+
+#MyNOTES {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    font-family: fangsong;
+    font-weight: 600;
+}
+
+.bg1-image {
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

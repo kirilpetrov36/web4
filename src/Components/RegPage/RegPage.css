@@ -1,0 +1,129 @@
+.bg-image {
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input {
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 0px 10px 10px;
+    width: 60%;
+}
+
+
+/* Position text in the middle of the page/image */
+
+.bg-text {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 50%;
+    height: 70%;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.topnav {
+    overflow: hidden;
+}
+
+.topnav input[type=text] {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 0px 10px 10px;
+    width: 40%;
+}
+
+.login-error {
+    color: red;
+    font-size: 16px;
+}
+
+.login_button {
+    overflow: hidden;
+    background-color: #57b846;
+    margin-top: 3%;
+    font-size: 20px;
+    padding: 10px 0px;
+    border-radius: 15px;
+    border: none;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login_button:hover {
+    background-color: #06a137;
+    /*Very green*/
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+}
+
+.acc {
+    margin-top: 5%;
+    font-size: 17px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border: hidden;
+    border-radius: 15px;
+}
+
+.acc:hover {
+    background-color: black;
+    color: white
+}
+
+a {
+    color: white;
+    font-size: 16px;
+    ;
+}
+
+.text {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #5F5F5F;
+}
+
+.reg-error {
+    color: red;
+    font-size: 16px;
+}
+
+.admin-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.lol {
+    text-align: center;
+}
