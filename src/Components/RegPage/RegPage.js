@@ -56,7 +56,7 @@ class RegPage extends React.Component {
             } else {
                 admin = 0
             }
-            axios.get(`http://127.0.0.1:8000/web2app/register_react/${this.state.login}/${this.state.password}/${admin}`)
+            axios.get(`http://127.0.0.1:7000/web2app/register_react/${this.state.login}/${this.state.password}/${admin}`)
             .then( res => {         
                     this.props.store.dispatch(PUT( res['data'][1] ));
                     this.redirectMainPage();           

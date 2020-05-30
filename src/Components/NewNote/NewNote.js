@@ -48,7 +48,7 @@ class NewNote extends React.Component {
         console.log(body)
         var data = new FormData();
         data.append( "json", JSON.stringify( body ) );
-        axios.get(`http://127.0.0.1:8000/web2app/save_note_react/${this.props.store.getState()['allInfo'][0][0]}/${this.state.theme}/${this.state.text}`)
+        axios.get(`http://127.0.0.1:7000/web2app/save_note_react/${this.props.store.getState()['allInfo'][0][0]}/${this.state.theme}/${this.state.text}`)
         .then( res => {         
                 this.props.store.dispatch(PUT( res['data'][1] ));
                 console.log('it works');

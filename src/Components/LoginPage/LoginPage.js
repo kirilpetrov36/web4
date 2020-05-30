@@ -12,7 +12,8 @@ class LoginPage extends React.Component {
         password: ' ',
         err: false,
         redrirect: false,
-        all: {}
+        all: {},
+        errLogin: false
     }
 
     setRedirect = () => {
@@ -46,12 +47,18 @@ class LoginPage extends React.Component {
         };
         var data = new FormData();
         data.append( "json", JSON.stringify( body ) );
-        axios.get(`http://127.0.0.1:8000/web2app/check_react_login/${this.state.login}/${this.state.password}`)
-        .then( res => {         
+        axios.get(`http://127.0.0.1:7000/web2app/check_react_login/${this.state.login}/${this.state.password}`)
+        .then( res => {
+            console.log(res['data'][0]);
+                if (res['data'][0] === 'ivalid'){
+                    this.setState({errLogin: true});
+                    console.log('worked');
+                } else {         
                 this.props.store.dispatch(PUT( res['data'][1] ));
                 console.log('it works');
                 console.log( res['data'][1] );
                 this.setRedirect();
+            }
 
           
         })    
@@ -101,7 +108,7 @@ class LoginPage extends React.Component {
                                         required 
                                         onChange={this.handlePassword} />    
                             </div>
-                            { <div className="login-error"></div>}
+                            { this.state.errLogin && <div className="login-error">Invalid login or password</div>}
                             <div style={{display: 'flex', flexDirection: 'column'}}>
                                 <input className="login_button" type="submit" value="Login"></input>
                                 <Link to="/register_page" className="acc"> Create your account </Link>

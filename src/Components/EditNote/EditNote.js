@@ -50,7 +50,7 @@ class EditNote extends React.Component {
     }
 
     delete = () => {
-        axios.get(`http://127.0.0.1:8000/web2app/delete_note_react/${this.state.username}/${this.state.theme_old}`)
+        axios.get(`http://127.0.0.1:7000/web2app/delete_note_react/${this.state.username}/${this.state.theme_old}`)
         .then( res => {         
             this.props.store.dispatch(PUT( res['data'][1] ));
             this.redirectMainPage();
@@ -72,7 +72,7 @@ class EditNote extends React.Component {
         }
       
 
-        axios.get(`http://127.0.0.1:8000/web2app/edit_note_react/${this.state.username}/${this.state.theme_old}/${theme_new}/${text}`)
+        axios.get(`http://127.0.0.1:7000/web2app/edit_note_react/${this.state.username}/${this.state.theme_old}/${theme_new}/${text}`)
         .then( res => {         
                 this.props.store.dispatch(PUT( res['data'][1] ));     
         })    

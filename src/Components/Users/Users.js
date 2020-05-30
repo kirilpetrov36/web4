@@ -3,9 +3,6 @@ import './Users.css';
 import axios from "axios";
 import { Redirect } from 'react-router-dom';
 
-
-var usersWasGot = false;
-
 class LoginPage extends React.Component {
 
     constructor(props) {
@@ -24,7 +21,7 @@ class LoginPage extends React.Component {
 
     async get_users() {
         console.log("was got");
-        axios.get(`http://127.0.0.1:8000/web2app/get_users_react`)
+        axios.get(`http://127.0.0.1:7000/web2app/get_users_react`)
         .then( res => {         
                this.setState({users: res['data'][1]});
                console.log(res);
@@ -40,7 +37,7 @@ class LoginPage extends React.Component {
         }
         this.setState({users: temp});
         if (user[0] !== undefined){
-            axios.get(`http://127.0.0.1:8000/web2app/delete_user_react/${user[0]}`)
+            axios.get(`http://127.0.0.1:7000/web2app/delete_user_react/${user[0]}`)
         }
     }
 
@@ -55,7 +52,7 @@ class LoginPage extends React.Component {
             }
         }
         this.setState({users: temp});
-        axios.get(`http://127.0.0.1:8000/web2app/make_admin_react/${user[0]}`)
+        axios.get(`http://127.0.0.1:7000/web2app/make_admin_react/${user[0]}`)
     }
 
     backMainPage = () => {
@@ -65,9 +62,8 @@ class LoginPage extends React.Component {
     }
 
     render() {
-        if (!usersWasGot){
+        if (this.state.users.length === 0){
             this.get_users();
-            usersWasGot = true;
         }
         console.log(this.state.users);
         if (this.state.redirectMainPage){
